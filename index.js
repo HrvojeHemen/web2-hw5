@@ -5,7 +5,6 @@ const path = require('path');
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-    res.header("Accept-CH","Device-Memory")
     res.sendFile('index.html', {root: path.join(__dirname, 'public')});
 })
 
