@@ -22,8 +22,8 @@ self.addEventListener('activate', event => {
 
 
 self.addEventListener('fetch', (event) => {
-    console.log("TU SAM")
-    console.log(event.request.url)
+    // console.log("TU SAM")
+    // console.log(event.request.url)
     // https://stackoverflow.com/questions/49157622/service-worker-typeerror-when-opening-chrome-extension
     if (event.request.url.startsWith('chrome-extension') || event.request.url.includes('extension')
         || event.request.url.includes('sentry') || !event.request.url.startsWith('http')) return;
@@ -45,7 +45,7 @@ self.addEventListener('fetch', (event) => {
                 });
             })
             .catch((error) => {
-                console.log("Error", event.request.url, error);
+                // console.log("Error", event.request.url, error);
                 return caches.match("offline.html");
             })
     );

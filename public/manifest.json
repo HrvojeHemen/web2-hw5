@@ -1,14 +1,20 @@
 {
     "name": "hw5",
     "short_name": "hw5",
-    "description": "zadaca 5",
-    "display": "fullscreen",
-    "theme_color": "blue",
-    "background_color": "#FFFFFF",
+    "icons": [
+        {
+            "src": "image.jpg",
+            "sizes": "88x88",
+            "type": "image/png"
+        }
+    ],
     "start_url": "/index.html",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "background_color": "#FFFFFF",
+    "theme_color": "blue",
+    "description": "zadaca 5",
     "scope": ".",
-    "orientation": "portrait-primary",
-    "dir": "ltr",
     "lang": "en-US",
     "prefer_related_applications": true
   }
