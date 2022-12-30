@@ -4,7 +4,7 @@
     "icons": [
         {
             "src": "image.jpg",
-            "sizes": "192x192",
+            "sizes": "264x264",
             "type": "image/png"
         }
     ],
