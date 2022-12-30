@@ -9,8 +9,10 @@ const cacheName = 'MyFancyCacheName_v1';
 
 self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open(cacheName).then((cache) => {
-            return cache.addAll(filesToCache);
+        caches.delete(cacheName).then(() => {
+            caches.open(cacheName).then((cache) => {
+                return cache.addAll(filesToCache);
+            })
         })
     );
 
@@ -51,3 +53,18 @@ self.addEventListener('fetch', (event) => {
     );
 
 });
+
+self.addEventListener("sync", function (event) {
+    console.log("Background sync!", event);
+    if (event.tag === "sync-snaps") {
+        event.waitUntil(runSync());
+    }
+});
+
+let runSync = async function () {
+    entries().then(entries => {
+        entries.forEach((entry) => {
+            console.log(entry)
+        })
+    })
+}
